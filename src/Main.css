@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color:#9696AD;
+}
+
+.info-block{
+    opacity: 0.6;
+    background-color: #252530;
+    box-shadow: 0 0 3px 3px #1B1B23;
+}
+
+.content {
+    height:100vh;
+    display: flex;
+}
+.sidenav {
+    width:6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    transform-origin: left;
+    transform: scaleX(1);
+    transition-duration: 0.2s;
+}
+
+.sidenav:hover {
+    transform-origin: left;
+    transform: scaleX(1.5);
+    transition-duration: 0.2s;
+}
+.sidenav icon{
+    transform-origin: left;
+    transform: scaleX(1);
+    transition-duration: 0.2s;
+}
+.sidenav:hover icon {
+    transform-origin: left;
+    transform: scaleX(0.66);
+    transition-duration: 0.2s;
+}
+
+.icon{
+    font-size: 1.5vw;
+    margin-left:auto;
+    margin-right:auto;
+    color: azure;
+    opacity: 0.5;
+}
+.icon:hover{
+    color:greenyellow;
+    opacity: 1.5;
+}
+
+.menu{
+    display: flex;
+    height:30%;
+}
+
+.menu icon{
+    margin-top:50px;
+}
+
+.category{
+    height:40%;
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.category icon{
+    margin-top: 30%;
+}
+
+
+.pad icon{
+    margin-top: 30%;
+}
+
+.main-content{
+    width:94%;
+    display:flex;
+    flex-direction: column;
+}
+
+.navbar {
+    height:23%;
+    display: flex;
+    
+}
+
+.page {
+    width:100%;
+    margin:6vh 0 0 5vw;
+    /* background-color: #9696AD */
+
+}
+.head h1{
+    justify-self: left;
+    /* margin-left:6vh; */
+    margin-top:6vh
+}
+.container{
+    width:96%;
+    display:flex;
+    justify-content:space-between;
+    height: 75%;
+    margin:auto;
+}
+
+.piechart{  width:20%; min-width: 160px;}
+.weather {  width:79%;}
+.piechart , .weather{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.title{
+    height:10%;
+    width: 100%;
+    /* background-color: aliceblue; */
+}
+.title h3{
+    margin-top: 3vh;
+    margin-left: 1.5vw;
+    color: #9696AD;
+    z-index: 100;
+}
+
+.charts{
+    height:90%;
+    display: flex;
+    /* min-width: 460px; */
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* background-color: #9696AD;    */
+}
+
+.arc-chart{
+    height:30%;
+}
+.block{
+    height: 100%;
+    width: 80%;
+    display: block;
+    /* background-color: aqua; */
+}
