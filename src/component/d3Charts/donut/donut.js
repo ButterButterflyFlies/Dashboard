@@ -4,46 +4,49 @@ import ResponsiveWrapper from '../responsive/response.js'
 
 class Donut extends Component {
     render(){
-        // const svgDimensions = { width: 100, height: 100 }
-        console.log(this.props.parentHeight)
         const svgDimensions = {
             width: this.props.parentWidth,
             height: 150
-          }
-        const tau = 2 * Math.PI
-        var width= svgDimensions.width,
-            height= svgDimensions.height,
-            fontSize = (Math.min(width,height)/6)
+        }
+        var val = 38,
+            text = `${val} %`
 
-        var radius= Math.min(width,height)*1/3
-        // console.log(width,height);
-        var bg_arc= d3.arc()
+        const min = Math.min(...Object.values(svgDimensions)),
+              tau = 2 * Math.PI,
+              fontSize = min/6,
+              radius = min/3
+
+        // background setup
+        var bg_arc = d3.arc()
             .innerRadius(radius)
             .outerRadius(radius+2)
             .startAngle(0)
             .endAngle(tau)
-        var bar_arc= d3.arc()
+
+        const bg_props = {
+            style: {
+                "fill":"#565663"
+            },
+            d: bg_arc()
+        }
+            
+        // foreground setup
+        var bar_arc = d3.arc()
             .innerRadius(radius)
             .outerRadius(radius+2)
             .startAngle(0)
-            .endAngle(0.127 * tau)
-        var g_attr= {
-            transform: `translate( ${width/2} ,${height/2})`
-        }
-
-        const bg_props= {
-          style: {
-            "fill":"#565663"
-          },
-          d: bg_arc()
-        }
-
-        const bar_props= {
+            .endAngle(val/100 * tau)
+        
+        const bar_props = {
             fill:"#4CBAFF",
             d: bar_arc()
         }
-        var text= '12.7%'
-        const text_props= {
+
+        const g_attr = {
+            transform: `translate( ${svgDimensions.width/2}, ${svgDimensions.height/2})`
+        }
+
+        const text_props = {
             fill: "#565663",
             textAnchor: "middle",
             style: {
