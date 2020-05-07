@@ -1,8 +1,7 @@
 import {
     SET_PIE_CHART_VALUE,
     SET_PIE_CHART_VALUE_SUCCESS,
-    SET_PIE_CHART_VALUE_FAILURE,
-    GET_PIE_CHART_VALUE
+    SET_PIE_CHART_VALUE_FAILURE
 } from '../../../constants/actionTypes'
 
 
@@ -14,9 +13,6 @@ import {
   
   export default (state = INIT_STATE, action) => {
     switch (action.type) {
-      case GET_PIE_CHART_VALUE:
-        return { ...state };
-  
       case SET_PIE_CHART_VALUE:
         return {
             ...state,
@@ -28,9 +24,9 @@ import {
         return { ...state, error: false };
   
       case SET_PIE_CHART_VALUE_FAILURE:
-        return { ...state, loading: true, error: action.payload };
+        return { ...state, error: true };
   
-      default: return { ...state, error: true };
+      default: return { ...state };
     }
   }
   
