@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import getPieChartValueReducer from './chartValues/getPieChartValue/reducer'
+import pieChartValueReducer from './pieChartValue/reducer'
 
 const reducers = combineReducers({
-    getPieChartValueReducer,
+    pieChartValueReducer,
 })
 
 export default reducers

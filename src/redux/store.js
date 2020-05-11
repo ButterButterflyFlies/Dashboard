@@ -6,7 +6,7 @@ import sagas from './sagas'
 
 const sagaMiddleware = createSagaMiddleware();
 
-export default function configureStore(initialState) {
+function configureStore(initialState) {
 
     const store = createStore(
         reducers,
@@ -14,7 +14,7 @@ export default function configureStore(initialState) {
         applyMiddleware(sagaMiddleware)
     );
 
-    sagaMiddleware.run(sagas);
+    store.sagaTask = sagaMiddleware.run(sagas);
 
     // if (module.hot) {
     //     // Enable Webpack hot module replacement for reducers
@@ -26,3 +26,5 @@ export default function configureStore(initialState) {
 
     return store;
 }
+
+export default configureStore

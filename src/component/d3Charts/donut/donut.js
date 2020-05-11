@@ -8,7 +8,7 @@ class Donut extends Component {
             width: this.props.parentWidth,
             height: 150
         }
-        var val = 38,
+        var val = this.props.number,
             text = `${val} %`
 
         const min = Math.min(...Object.values(svgDimensions)),
