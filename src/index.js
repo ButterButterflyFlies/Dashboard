@@ -1,36 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import { createStore, applyMiddleware } from 'redux'
-// import createSagaMiddleware from 'redux-saga'
 
-// import reducer from './reducers'
-// import mySaga from './sagas'
-
+import { Provider } from 'react-redux'
+import configureStore from './redux/store' 
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { BrowserRouter } from 'react-router-dom';
-
-
-// // create the saga middleware
-// const sagaMiddleware = createSagaMiddleware()
-// // mount it on the Store
-// const store = createStore(
-//   reducer,
-//   applyMiddleware(sagaMiddleware)
-// )
-
-// // then run the saga
-// sagaMiddleware.run(mySaga)
-
-
+import { BrowserRouter as Router } from 'react-router-dom';
 ReactDOM.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+    <Provider store={configureStore()}>
+        <Router>
+            <App />
+        </Router>
+    </Provider>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

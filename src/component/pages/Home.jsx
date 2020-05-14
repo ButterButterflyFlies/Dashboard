@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Donut from '../d3Charts/donut/donut.js'
 import Chart from '../d3Charts/chart/Chart.js'
 
+
+import { connect } from "react-redux"
+
 const Title = (props) => (
     <div className="navbar">
         <div className="page">
@@ -12,8 +15,9 @@ const Title = (props) => (
     </div>
 )
 
-export default class Home extends Component {
+class Home extends Component {
   render() {
+    
     return (
         <div className="main-content">
             <Title title = {'Overview'}/>
@@ -24,10 +28,10 @@ export default class Home extends Component {
                     </div>
                     <div className="charts">
                         <div className='arc-chart' color="FFFD87">
-                            <Donut/>
+                            <Donut number={this.props.val1}/>
                         </div>
                         <div className='arc-chart' color="#AA525A" >
-                            <Donut/>
+                            <Donut number={this.props.val2}/>
                         </div>
                     </div>
                 </div>
@@ -45,3 +49,15 @@ export default class Home extends Component {
         </div>
     )};
 }
+
+// export default Map
+const mapStateToProps = (state) => {
+    const {val1, val2} = state.pieChartValueReducer
+    return {
+        val1,
+        val2
+    }
+}
+
+
+export default connect(mapStateToProps)(Home)
