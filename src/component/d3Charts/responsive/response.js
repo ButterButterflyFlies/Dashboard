@@ -13,6 +13,7 @@ export default ChartComponent => (
     }
 
     componentDidMount() {
+      console.log('mounted')
       this.fitParentContainer()
       window.addEventListener('resize', this.fitParentContainer)
     }
@@ -25,7 +26,6 @@ export default ChartComponent => (
       const { containerWidth } = this.state
       const currentContainerWidth = this.chartContainer
         .getBoundingClientRect().width
-
       const shouldResize = containerWidth !== currentContainerWidth
 
       if (shouldResize) {
