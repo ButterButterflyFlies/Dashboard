@@ -24,7 +24,7 @@ class Home extends Component {
             <div className="container">
                 <div className="piechart info-block">
                     <div className ="title">
-                        <h2>Device Status</h2>
+                        <h3>DEVICE STATUS</h3>
                     </div>
                     <div className="charts">
                         <div className='arc-chart' color="FFFD87">
@@ -37,7 +37,7 @@ class Home extends Component {
                 </div>
                 <div className="weather info-block">
                     <div className="title">
-                        <h2>Sensor Stats</h2>
+                        <h3>SENSOR STATS</h3>
                     </div>
                     <div className="charts">
                         <div className="block">

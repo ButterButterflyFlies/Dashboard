@@ -1,6 +1,73 @@
 import React, { Component } from 'react'
 import * as d3 from 'd3'
 import ResponsiveWrapper from '../responsive/response.js'
+const TAU = 2* Math.PI
+
+function newArc (radius, val) {
+    return d3.arc()
+        .innerRadius(radius)
+        .outerRadius(radius+2)
+        .startAngle(0)
+        .endAngle(val/100 * TAU)
+}
+
+// function arcTween(oldAngle, newAngle, arc) {
+//     return function(d) {
+        
+//         console.log(d)
+//         var interpolate = d3.interpolate(oldAngle, newAngle);
+//         return function(t) {
+//             d.endAngle = interpolate(t);
+//             return arc(d);
+//         };
+//     };
+// }
+
+
+const Text = ({fontSize, text}) => {
+    const text_props = {
+        fill: "#565663",
+        textAnchor: "middle",
+        style: { "fontSize": `${fontSize}px` },
+        dy: fontSize/3,
+        dx: 2
+    }
+    return  <text {...text_props}>{text}</text>
+}
+
+const ForeGround = ({radius, val}) => {
+    var bar_arc = newArc (radius, val)
+
+    // foreground setup
+    const bar_props = {
+        fill:"#4CBAFF",
+        d: bar_arc()
+    }
+
+    return <path {...bar_props} ></path>
+}
+
+const BackGround = ({radius}) => {
+    var bg_arc = d3.arc()
+            .innerRadius(radius)
+            .outerRadius(radius+2)
+            .startAngle(0)
+            .endAngle(TAU)
+
+    const bg_props = {
+        style: { "fill":"#565663" },
+        d: bg_arc()
+    }
+    return <path {...bg_props}></path>
+}
+
+const DonutG = (props) => {
+    const {svgDimensions} = props
+    const g_attr = {
+        transform: `translate( ${svgDimensions.width/2}, ${svgDimensions.height/2})`
+    }
+    return <g {...g_attr}> {props.children} </g>
+}
 
 class Donut extends Component {
     render(){
@@ -8,118 +75,23 @@ class Donut extends Component {
             width: this.props.parentWidth,
             height: 150
         }
+
         var val = this.props.number,
             text = `${val} %`
 
         const min = Math.min(...Object.values(svgDimensions)),
-              tau = 2 * Math.PI,
               fontSize = min/6,
               radius = min/3
 
-        // background setup
-        var bg_arc = d3.arc()
-            .innerRadius(radius)
-            .outerRadius(radius+2)
-            .startAngle(0)
-            .endAngle(tau)
-
-        const bg_props = {
-            style: {
-                "fill":"#565663"
-            },
-            d: bg_arc()
-        }
-            
-        // foreground setup
-        var bar_arc = d3.arc()
-            .innerRadius(radius)
-            .outerRadius(radius+2)
-            .startAngle(0)
-            .endAngle(val/100 * tau)
-        
-        const bar_props = {
-            fill:"#4CBAFF",
-            d: bar_arc()
-        }
-
-        const g_attr = {
-            transform: `translate( ${svgDimensions.width/2}, ${svgDimensions.height/2})`
-        }
-
-        const text_props = {
-            fill: "#565663",
-            textAnchor: "middle",
-            style: {
-                "fontSize": `${fontSize}px`
-            },
-            dy: fontSize/3,
-            dx: 2
-        }
-
-        // d3.interval(function() {
-        //     foreground.transition()
-        //         .duration(750)
-        //         .attrTween("d", arcTween(Math.random() * tau));
-        // }, 1000);
-
-        // function arcTween(newAngle) {
-
-            // The function passed to attrTween is invoked for each selected element when
-            // the transition starts, and for each element returns the interpolator to use
-            // over the course of transition. This function is thus responsible for
-            // determining the starting angle of the transition (which is pulled from the
-            // element’s bound datum, d.endAngle), and the ending angle (simply the
-            // newAngle argument to the enclosing function).
-            // return function(d) {
-
-                // To interpolate between the two angles, we use the default d3.interpolate.
-                // (Internally, this maps to d3.interpolateNumber, since both of the
-                // arguments to d3.interpolate are numbers.) The returned function takes a
-                // single argument t and returns a number between the starting angle and the
-                // ending angle. When t = 0, it returns d.endAngle; when t = 1, it returns
-                // newAngle; and for 0 < t < 1 it returns an angle in-between.
-                // var interpolate = d3.interpolate(d.endAngle, newAngle);
-
-                // The return value of the attrTween is also a function: the function that
-                // we want to run for each tick of the transition. Because we used
-                // attrTween("d"), the return value of this last function will be set to the
-                // "d" attribute at every tick. (It’s also possible to use transition.tween
-                // to run arbitrary code for every tick, say if you want to set multiple
-                // attributes from a single function.) The argument t ranges from 0, at the
-                // start of the transition, to 1, at the end.
-                // return function(t) {
-
-                    // Calculate the current arc angle based on the transition time, t. Since
-                    // the t for the transition and the t for the interpolate both range from
-                    // 0 to 1, we can pass t directly to the interpolator.
-                    //
-                    // Note that the interpolated angle is written into the element’s bound
-                    // data object! This is important: it means that if the transition were
-                    // interrupted, the data bound to the element would still be consistent
-                    // with its appearance. Whenever we start a new arc transition, the
-                    // correct starting angle can be inferred from the data.
-                    // d.endAngle = interpolate(t);
-
-                    // text.text(Math.round((d.endAngle/tau)*100)+'%');
-
-                    // Lastly, compute the arc path given the updated data! In effect, this
-                    // transition uses data-space interpolation: the data is interpolated
-                    // (that is, the end angle) rather than the path string itself.
-                    // Interpolating the angles in polar coordinates, rather than the raw path
-                    // string, produces valid intermediate arcs during the transition.
-                    // return arc(d);
-                // };
-            // };
-        
-            return (
-                <svg {...svgDimensions}>
-                    <g {...g_attr}>
-                        <path {...bg_props}></path>
-                        <path {...bar_props}></path>
-                        <text {...text_props}>{text}</text>
-                    </g>
-                </svg>
-            )
+        return (
+            <svg {...svgDimensions}>
+                <DonutG svgDimensions={svgDimensions}>
+                    <BackGround radius={radius} />
+                    <ForeGround radius={radius} val={val} />
+                    <Text fontSize={fontSize} text={text} />
+                </DonutG>
+            </svg>
+        )
     }
 }
 
