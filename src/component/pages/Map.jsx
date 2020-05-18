@@ -22,7 +22,9 @@ class Map extends Component {
     updateVal(name, e) {
         e.preventDefault()
         const {val1, val2} = this.props        
-        const val = parseInt(e.target.value)
+        const val = !e.target.value ? 0 : 
+                    e.target.value <= 100 ? parseInt(e.target.value) :
+                        parseInt(e.target.value) % 100
 
         const returnObject = {
             val1: (name === 'val1') ? val: val1,
@@ -48,29 +50,33 @@ class Map extends Component {
     }
 
     render () {
-        const divStyle = {'flex': 'row'}
+        const divStyle = {
+            'display': 'flex',
+            'flexDirection': 'column',
+            'height': '100%',
+            'width': '20%',
+            'justifyContent': 'center',
+            'textAlign': 'center'
+        }
         return (
             <div className="main-content">
                 <Title title={'Maps'}/>
                 <div className="container" style={{'flexDirection': 'column', 'justifyContent': 'space-evenly'}}>
                     
                     <div style={divStyle}>
-                        <input type='text'
-                            value={this.props.val1}
-                            onChange={e => this.updateVal('val1', e)}>
-                        </input>
-                        
-                        <input type='text'
-                            value={this.props.val2}
-                            style={{'marginLeft': '1rem'}}
-                            onChange={e => this.updateVal('val2', e)}>
-                        </input>
-
-                        {/* <button className="btn btn-large btn-default ml-3"
-                            onClick={e => this.sendUpdate(e)}
-                            style={{'marginLeft': '1rem'}}>
-                                Update row 1
-                        </button> */}
+                        <div>
+                            <input type='text'
+                                value={this.props.val1}
+                                onChange={e => this.updateVal('val1', e)}>
+                            </input>
+                        </div>
+                        <div>
+                            <input type='text'
+                                value={this.props.val2}
+                                style={{'marginTop': '1rem'}}
+                                onChange={e => this.updateVal('val2', e)}>
+                            </input>
+                        </div>
                     </div>
 
                     <div style={divStyle}>
