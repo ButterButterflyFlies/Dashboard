@@ -14,22 +14,22 @@ const SideNav = () => {
             
             <div className="sidenav-center-align category">
                 <Link to='/home'>
-                    <i className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="pie-chart" onClick={() => {setCurrent('home')}} />                
+                    <i id="home" className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="pie-chart" onClick={() => {setCurrent('home')}} />                
                 </Link>
                 <Link to='/map'>
-                    <i className={`oi icon ${current === 'map' ? 'active': ''}`} data-glyph="map-marker" onClick={() => {setCurrent('map')}} />
+                    <i id="map" className={`oi icon ${current === 'map' ? 'active': ''}`} data-glyph="map-marker" onClick={() => {setCurrent('map')}} />
                 </Link>
                 <Link to='/home'>
-                    <i className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="audio-spectrum" onClick={() => {setCurrent('home')}} />
+                    <i id="music" className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="audio-spectrum" onClick={() => {setCurrent('home')}} />
                 </Link>
                 <Link to='/home'>
-                    <i className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="brush" onClick={() => {setCurrent('home')}} />
+                    <i id="art" className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="brush" onClick={() => {setCurrent('home')}} />
                 </Link>
                 <Link to='/home'>
-                    <i className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="droplet" onClick={() => {setCurrent('home')}} />
+                    <i id="weather" className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="droplet" onClick={() => {setCurrent('home')}} />
                 </Link>
                 <Link to='/home'>
-                    <i className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="heart" onClick={() => {setCurrent('home')}} />
+                    <i id="hobby" className={`oi icon ${current === 'home' ? 'active': ''}`} data-glyph="heart" onClick={() => {setCurrent('home')}} />
                 </Link>
             </div>
         </div>

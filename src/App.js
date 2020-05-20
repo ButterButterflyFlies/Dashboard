@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 
 import SideNav from './component/pages/SideNav.jsx'
-import Container from './Container.js'
+import Container from './routes'
 
 // import logo from './logo.svg';
-import './css/App.css'
-import './css/Main.css'
-import './css/Theme.css'
+import '@Style/App.css'
+import '@Style/Main.css'
+import '@Style/Theme.css'
 
 import './icon/font/css/open-iconic.css'
-import './css/Open-sans.css'
+import '@Style/Open-sans.css'
 
 class App extends Component {
   render() {
