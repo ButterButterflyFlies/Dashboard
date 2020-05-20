@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-
-// import logo from './logo.svg';
-import './App.css';
-import './Main.css';
-import './icon/font/css/open-iconic.css'
-import './Open-sans.css'
+import { Redirect } from "react-router-dom";
 
 import SideNav from './component/pages/SideNav.jsx'
 import Container from './Container.js'
 
-import { Redirect } from "react-router-dom";
+// import logo from './logo.svg';
+import './css/App.css'
+import './css/Main.css'
+import './css/Theme.css'
+
+import './icon/font/css/open-iconic.css'
+import './css/Open-sans.css'
 
 class App extends Component {
   render() {
