@@ -1,12 +1,11 @@
-:root {
-    --main-nav-color: #0e1219;
-    --main-text-color: rgba(240, 255, 255, 0.7);
-}
-
 * {
     margin: 0;
     font-family: 'Open Sans Condensed', sans-serif;
     color: var(--main-text-color);
+}
+
+body {
+    background-color:var(--main-bg-color);
 }
 
 .info-block {
@@ -81,11 +80,11 @@
 }
 
 #art:hover {
-    color:#9797D4;
+    color:rgb(213, 121, 255);
 }
 
 #weather:hover {
-    color:#9EBEFF;
+    color:rgb(64, 147, 255);
 }
 
 #hobby:hover {

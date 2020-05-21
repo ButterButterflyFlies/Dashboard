@@ -6,6 +6,7 @@ module.exports = function override(config, env) {
     '@Style': path.resolve(__dirname, './src/css/'),
     '@Component': path.resolve(__dirname, './src/component/'),
     '@Page': path.resolve(__dirname, './src/component/pages'),
+    '@actionTypes': path.resolve(__dirname, './src/constants/actionTypes'),
   }
   return config
 };
