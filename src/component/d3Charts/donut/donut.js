@@ -24,7 +24,8 @@ function newArc (radius, val) {
 // }
 
 
-const Text = ({fontSize, text}) => {
+const Text = ({length, val}) => {
+    const fontSize = length / 6
     const text_props = {
         fill: "#565663",
         textAnchor: "middle",
@@ -32,10 +33,11 @@ const Text = ({fontSize, text}) => {
         dy: fontSize/3,
         dx: 2
     }
-    return  <text {...text_props}>{text}</text>
+    return  <text {...text_props}>{`${val} %`}</text>
 }
 
-const ForeGround = ({radius, val}) => {
+const ForeGround = ({length, val}) => {
+    const radius = length/3
     var bar_arc = newArc (radius, val)
 
     // foreground setup
@@ -47,7 +49,8 @@ const ForeGround = ({radius, val}) => {
     return <path {...bar_props} ></path>
 }
 
-const BackGround = ({radius}) => {
+const BackGround = ({length}) => {
+    const radius = length/3
     var bg_arc = d3.arc()
             .innerRadius(radius)
             .outerRadius(radius+2)
@@ -70,25 +73,21 @@ const DonutG = (props) => {
 }
 
 class Donut extends Component {
-    render(){
+    render() {
+        const val = this.props.number
         const svgDimensions = {
             width: this.props.parentWidth,
             height: 150
         }
 
-        var val = this.props.number,
-            text = `${val} %`
-
-        const min = Math.min(...Object.values(svgDimensions)),
-              fontSize = min/6,
-              radius = min/3
+        const length = Math.min(...Object.values(svgDimensions))
 
         return (
             <svg {...svgDimensions}>
                 <DonutG svgDimensions={svgDimensions}>
-                    <BackGround radius={radius} />
-                    <ForeGround radius={radius} val={val} />
-                    <Text fontSize={fontSize} text={text} />
+                    <BackGround length={length} />
+                    <ForeGround length={length} val={val} />
+                    <Text length={length} val={val} />
                 </DonutG>
             </svg>
         )

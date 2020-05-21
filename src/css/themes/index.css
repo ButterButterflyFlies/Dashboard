@@ -1,0 +1,17 @@
+:root {
+    --main-nav-color: #0e1219;
+    --main-bg-color: #1C1C23;
+    --main-text-color: rgba(240, 255, 255, 0.7);
+}
+
+[data-theme='Green'] {
+    --main-nav-color: #339989;
+    --main-bg-color: #7de2d1;
+    --main-text-color: rgb(31, 36, 36);
+}
+
+[data-theme='Purple'] {
+    --main-nav-color: #715877;
+    --main-bg-color: #b99bc0;
+    --main-text-color: rgb(35, 27, 36);
+}

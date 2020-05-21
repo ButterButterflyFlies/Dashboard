@@ -2,10 +2,10 @@ import React from 'react';
 import { Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import Home from './component/pages/Home.jsx'
-import Map from './component/pages/Map.jsx'
+import Home from '@Component/pages/Home.jsx'
+import Map from '@Component/pages/Map.jsx'
 
-function Container ({location})  {
+function Routes ({location})  {
     return (
         <TransitionGroup>
             <CSSTransition
@@ -25,4 +25,4 @@ function Container ({location})  {
     )
 }
 
-export default withRouter(Container)
+export default withRouter(Routes)
