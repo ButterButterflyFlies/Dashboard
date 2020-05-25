@@ -9,8 +9,7 @@ import './icon/font/css/open-iconic.css'
 
 import '@Style/Main.css'
 import '@Style/Open-sans.css'
-
-import '@Style/themes/index.css'
+import '@Style/Themes/index.css'
 
 const App = () => {
   const theme = useSelector(state => state.themeColorReducer.theme)

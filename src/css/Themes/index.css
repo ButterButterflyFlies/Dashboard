@@ -2,6 +2,7 @@
     --main-nav-color: #0e1219;
     --main-bg-color: #1C1C23;
     --main-text-color: rgba(240, 255, 255, 0.7);
+    --main-border-color: rgba(160, 160, 160, 0.2);
 }
 
 [data-theme='Green'] {

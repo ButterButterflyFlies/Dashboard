@@ -1,0 +1,91 @@
+
+.sidenav {
+    width:6%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-nav-color);
+    justify-content: flex-start;
+
+    transform-origin: left;
+    transform: scaleX(1);
+    transition-duration: 0.2s;
+}
+
+.sidenav:hover {
+    transform-origin: left;
+    text-align: center;
+    transform: scaleX(1.5);
+    transition-duration: 0.2s;
+}
+
+/* sidenav icons */
+
+.sidenav a {
+    transform-origin: center;
+    transform: scaleX(1);
+    transition-duration: 0.2s;
+}
+
+.sidenav:hover a {
+    transform-origin: center;
+    text-align: center;
+    transform: scaleX(0.66);
+    transition-duration: 0.2s;
+}
+
+/* menu icons*/
+
+.icon {
+    font-size: 1.5rem;
+    margin-left:auto;
+    margin-right:auto;
+    transition: text-shadow 0.3s, opacity 0.3s, color 0.3s;
+}
+
+.icon:hover {
+    text-shadow: 0px 0px 30px;
+    opacity: 1.5;
+    transition: text-shadow 0.3s, opacity 0.3s, color 0.3s;
+}
+
+#home:hover, #home.active{
+    color:greenyellow;
+}
+
+#map:hover, #map.active{
+    color:#7DE2D1;
+}
+
+#music:hover, #music.active{
+    color:greenyellow;
+}
+
+#art:hover, #art.active{
+    color:rgb(213, 121, 255);
+}
+
+#weather:hover, #weather.active{
+    color:rgb(64, 147, 255);
+}
+
+#hobby:hover, #hobby.active{
+    color:#FFABBC;
+}
+
+.sidenav-center-align {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.menu {
+    flex: 1;
+    padding-top: 5vh;
+}
+
+.category {
+    flex: 3;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    flex-direction: column;
+}

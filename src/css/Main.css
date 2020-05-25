@@ -1,3 +1,5 @@
+@import url("./Components/SideNav.css");
+
 * {
     margin: 0;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -9,104 +11,13 @@ body {
 }
 
 .info-block {
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .content {
     height: 100vh;
     display: flex;
     overflow: hidden;
-}
-
-.sidenav {
-    width:6%;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--main-nav-color);
-    justify-content: flex-start;
-
-    transform-origin: left;
-    transform: scaleX(1);
-    transition-duration: 0.2s;
-}
-
-.sidenav:hover {
-    transform-origin: left;
-    text-align: center;
-    transform: scaleX(1.5);
-    transition-duration: 0.2s;
-}
-
-/* sidenav icons */
-
-.sidenav a {
-    transform-origin: center;
-    transform: scaleX(1);
-    transition-duration: 0.2s;
-}
-
-.sidenav:hover a {
-    transform-origin: center;
-    text-align: center;
-    transform: scaleX(0.66);
-    transition-duration: 0.2s;
-}
-
-/* menu icons*/
-
-.icon {
-    font-size: 1.5rem;
-    margin-left:auto;
-    margin-right:auto;
-    transition: text-shadow 0.3s, opacity 0.3s, color 0.3s;
-}
-
-.icon:hover {
-    text-shadow: 0px 0px 30px;
-    opacity: 1.5;
-    transition: text-shadow 0.3s, opacity 0.3s, color 0.3s;
-}
-
-#home:hover {
-    color:greenyellow;
-}
-
-#map:hover {
-    color:#7DE2D1;
-}
-
-#music:hover {
-    color:greenyellow;
-}
-
-#art:hover {
-    color:rgb(213, 121, 255);
-}
-
-#weather:hover {
-    color:rgb(64, 147, 255);
-}
-
-#hobby:hover {
-    color:#FFABBC;
-}
-
-.sidenav-center-align {
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-}
-
-.menu {
-    flex: 1;
-    padding-top: 5vh;
-}
-
-.category {
-    flex: 3;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    flex-direction: column;
 }
 
 .main-content {
@@ -126,40 +37,44 @@ body {
     margin:6vh 0 0 5vw;
 }
 
-.head h1{
+.head h1 {
     justify-self: left;
     letter-spacing: 2px;
     margin-top: 4vh;
     margin-left:1rem;
 }
-.container{
+.container {
     width:96%;
     display:flex;
-    justify-content:center;
+    justify-content:space-around;
     height: 75%;
     margin:auto;
 }
 
-.piechart{  width:30%; min-width: 160px;}
-.weather {  width:77%;}
+.piechart { width:17%; min-width: 160px; }
+.weather { width:63%; }
 .piechart , .weather{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    /* border:1px solid var(--main-border-color); */
+    /* border-radius: 1rem; */
 }
 
-.title{
+
+.title {
     height:10%;
     width: 100%;
     padding-top: 5vh;
     text-align: center;
 }
-.title h3{
+.title h3 {
     letter-spacing: 2px;
     z-index: 100;
 }
 
-.charts{
+.charts {
     height:90%;
     display: flex;
     /* min-width: 460px; */
@@ -167,10 +82,10 @@ body {
     justify-content: space-evenly;
 }
 
-.arc-chart{
+.arc-chart {
     height:30%;
 }
-.block{
+.block {
     height: 100%;
     width: 80%;
     display: block;
@@ -203,4 +118,4 @@ section.route-section {
     width: 94%;
     top: 0;
     left: 6%;
-  }
+}

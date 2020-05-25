@@ -9,7 +9,7 @@ import {
 
 const SideNav = () => {
   const dispatch = useDispatch()
-  const [current, setCurrent] = useState()
+  const [current, setCurrent] = useState('home')
 
   const onclickEvent = (path, theme) => {
     setCurrent(path)
@@ -44,33 +44,33 @@ const SideNav = () => {
         <Link to='/home'>
           <i
             id="music"
-            className={`oi icon ${current === 'home' ? 'active' : ''}`}
+            className={`oi icon ${current === 'music' ? 'active' : ''}`}
             data-glyph="audio-spectrum"
-            onClick={() => onclickEvent('home', 'Dark')}
+            onClick={() => onclickEvent('music', 'Dark')}
           />
         </Link>
         <Link to='/home'>
           <i
             id="art"
-            className={`oi icon ${current === 'home' ? 'active' : ''}`}
+            className={`oi icon ${current === 'art' ? 'active' : ''}`}
             data-glyph="brush"
-            onClick={() => onclickEvent('home', 'Purple')}
+            onClick={() => onclickEvent('art', 'Purple')}
           />
         </Link>
         <Link to='/home'>
           <i
             id="weather"
-            className={`oi icon ${current === 'home' ? 'active' : ''}`}
+            className={`oi icon ${current === 'weather' ? 'active' : ''}`}
             data-glyph="droplet"
-            onClick={() => onclickEvent('home', 'Dark')}
+            onClick={() => onclickEvent('weather', 'Dark')}
           />
         </Link>
         <Link to='/home'>
           <i
             id="hobby"
-            className={`oi icon ${current === 'home' ? 'active' : ''}`}
+            className={`oi icon ${current === 'hobby' ? 'active' : ''}`}
             data-glyph="heart"
-            onClick={() => onclickEvent('home', 'Dark')}
+            onClick={() => onclickEvent('hobby', 'Dark')}
           />
         </Link>
       </div>
