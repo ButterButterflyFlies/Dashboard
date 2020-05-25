@@ -1,10 +1,12 @@
 {
   "name": "my-app",
+  "homepage": "https://butterbutterflyflies.github.com/Dashboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
     "d3": "^5.9.1",
+    "gh-pages": "^2.2.0",
     "jquery": "^3.5.0",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
@@ -19,8 +21,10 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-scripts build",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
