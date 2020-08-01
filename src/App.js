@@ -10,6 +10,8 @@ import './icon/font/css/open-iconic.css'
 import '@Style/Main.css'
 import '@Style/Open-sans.css'
 import '@Style/Themes/index.css'
+import '@Style/Components/Pages/crtEffect.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   const theme = useSelector(state => state.themeColorReducer.theme)

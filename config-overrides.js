@@ -7,6 +7,7 @@ module.exports = function override(config, env) {
     '@Component': path.resolve(__dirname, './src/component/'),
     '@Page': path.resolve(__dirname, './src/component/pages'),
     '@actionTypes': path.resolve(__dirname, './src/constants/actionTypes'),
+    '@Redux': path.resolve(__dirname, './src/redux'),
   }
   return config
 };

@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Home from '@Component/pages/Home.jsx'
 import Map from '@Component/pages/Map.jsx'
+import Music from '@Component/pages/Music.jsx'
 
 function Routes ({location})  {
     return (
@@ -16,6 +17,7 @@ function Routes ({location})  {
                 <section className="route-section">
                     <Switch location={location}>
                         <Route path='/home' component={Home} />
+                        <Route path='/music' component={Music} />
                         <Route path='/map' component={Map} />
                     </Switch>
                     

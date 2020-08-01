@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { connect } from "react-redux"
-import { setPieChartValue } from '../../redux/action'
+import { setPieChartValue } from '@Redux/action'
 
 const Title = (props) => (
     <div className="navbar">

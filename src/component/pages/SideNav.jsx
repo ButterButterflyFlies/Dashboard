@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import {
   setThemeColor
-} from '../../redux/action'
+} from '@Redux/action'
 
 
 const SideNav = () => {
@@ -41,7 +41,7 @@ const SideNav = () => {
             onClick={() => onclickEvent('map', 'Green')}
           />
         </Link>
-        <Link to='/home'>
+        <Link to='/music'>
           <i
             id="music"
             className={`oi icon ${current === 'music' ? 'active' : ''}`}
