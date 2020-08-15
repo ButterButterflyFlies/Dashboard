@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import SideNav from '@Component/pages/SideNav.jsx'
 import Routes from './routes'
 
+import 'bootstrap/dist/css/bootstrap.css'
 import './icon/font/css/open-iconic.css'
 
 import '@Style/Main.css'

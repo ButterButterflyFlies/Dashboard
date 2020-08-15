@@ -1,13 +1,21 @@
-const path = require("path");
 
-module.exports = function override(config, env) {
+const path = require("path")
+const {
+  override,
+  addWebpackAlias,
+  addExternalBabelPlugins,
+} = require("customize-cra")
+
+module.exports = override(
   // add an alias for "ag-grid-react" imports
-  config.resolve.alias = {
+  addWebpackAlias({
     '@Style': path.resolve(__dirname, './src/css/'),
     '@Component': path.resolve(__dirname, './src/component/'),
     '@Page': path.resolve(__dirname, './src/component/pages'),
     '@actionTypes': path.resolve(__dirname, './src/constants/actionTypes'),
     '@Redux': path.resolve(__dirname, './src/redux'),
-  }
-  return config
-};
+  }),
+  ...addExternalBabelPlugins(
+    'jsx-control-statements'
+  )
+);
