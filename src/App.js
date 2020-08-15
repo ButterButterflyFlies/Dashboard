@@ -25,7 +25,7 @@ const App = () => {
     <div className="content">
       <SideNav />
       <Routes />
-      <Redirect to='/home' />
+      {/* <Redirect to='/home' /> */}
     </div>
   )
 }

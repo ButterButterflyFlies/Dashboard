@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactPlayer from 'react-player/youtube'
 import { useSpring, animated } from 'react-spring'
 
 const trackList = [
@@ -134,18 +133,7 @@ const MusicProjection = () => {
         }}
     ))
     const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-        const trans = (x, y) => `translate3d(${-(x / 120)}px,${-(y / 120)}px,0)`
-    const opts = {
-        playerVars: {
-            // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
-            disablekb: 1,
-            loop:1,
-            modestbranding: 1,
-            iv_load_policy:3,
-            controls: 0,
-        },
-    };
+    const trans = (x, y) => `translate3d(${-(x / 120)}px,${-(y / 120)}px,0)`
     return (
         <div
             className="main-content"
@@ -162,31 +150,24 @@ const MusicProjection = () => {
             >
                 <div style={{opacity:'0.5'}} className="crt-background info-graph music-card">
                     <div className="music-option-list" style={{width:'100%', height:'100%', overflow:'hidden'}}>
-                        <img src="https://j.gifs.com/3Q3pMp.gif" style={{height:'100%', marginLeft:'-128%', opacity:'0.7'}}/>
-                        {/* <ReactPlayer
-                            muted={true}
-                            playing={true}
-                            height="100%"
-                            // style={{right:'50%'}}
-                            url='https://www.youtube.com/watch?v=UFQEttrn6CQ'
-                        /> */}
+                        <img alt="" src="https://j.gifs.com/3Q3pMp.gif" style={{height:'100%', marginLeft:'-128%', opacity:'0.7'}}/>
                     </div>
                     <div className="music-option-list" style={{width:'inherit', height:'100%', position:'absolute', top: '0' }}>
-                        <p style={{marginTop:'110%', textAlign: 'center', fontSize:'1.7rem', fontWeight: 'boler', letterSpacing: '2px'}}>KING GNU</p>
-                        <div className="mx-3" style={{paddingLeft:'1rem',paddingRight: '1rem', backgroundImage: 'linear-gradient(transparent 0%, black 60%)', height:'28%'}}>
-                            <p style={{marginTop:'1.2rem', textAlign: 'center', fontSize:'rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
+                        <p style={{marginTop:'110%', textAlign: 'center', fontSize:'1.7rem', fontWeight: 'boler', letterSpacing: '2px'}}>HAKU JITSU</p>
+                        <div className="px-3 text-center" style={{backgroundImage: 'linear-gradient(transparent 0%, black 60%)', height:'28%'}}>
+                            <p style={{marginTop:'1.2rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
                                 時には誰かを
                             </p>
-                            <p style={{marginTop:'.5rem', textAlign: 'center', fontSize:'rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
+                            <p style={{marginTop:'.5rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
                                 知らず知らずのうち
                             </p>
-                            <p style={{marginTop:'.5rem', textAlign: 'center', fontSize:'rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
+                            <p style={{marginTop:'.5rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
                                 傷つけてしまったり
                             </p>
-                            <p style={{marginTop:'.5rem', textAlign: 'center', fontSize:'rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
+                            <p style={{marginTop:'.5rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
                                 失ったりして初めて
                             </p>
-                            <p style={{marginTop:'.5rem', textAlign: 'center', fontSize:'rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
+                            <p style={{marginTop:'.5rem', letterSpacing: '1px', fontSize:'0.7rem'}}>
                                 犯した罪を知る
                             </p>
                         </div>
@@ -230,7 +211,6 @@ const MusicProjection = () => {
                 </div>
                 <div style={{backgroundColor:'rgb(33, 33, 35)', opacity:'0.7'}} className="crt-background info-graph music-card">
                     <div className="music-title">
-
                     </div>
                     <div className="music-list">
                     </div>

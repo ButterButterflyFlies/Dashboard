@@ -16,9 +16,10 @@ function Routes ({location})  {
             >
                 <section className="route-section">
                     <Switch location={location}>
-                        <Route path='/home' component={Home} />
-                        <Route path='/music' component={Music} />
-                        <Route path='/map' component={Map} />
+                        <Route path='/home' exac={true} component={Home} />
+                        <Route path='/music' exac={true} component={Music} />
+                        <Route path='/map' exac={true} component={Map} />
+                        <Route component={Home} />
                     </Switch>
                     
                 </section>
