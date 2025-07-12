@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { scaleBand, scaleLinear } from 'd3-scale'
 
 import data from '../data.js'

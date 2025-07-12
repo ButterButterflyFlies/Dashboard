@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 import { connect } from "react-redux"
 import { setPieChartValue } from '../../redux/action'
@@ -21,8 +21,8 @@ class Map extends Component {
     }
     updateVal(name, e) {
         e.preventDefault()
-        const {val1, val2} = this.props        
-        const val = !e.target.value ? 0 : 
+        const {val1, val2} = this.props
+        const val = !e.target.value ? 0 :
                     e.target.value <= 100 ? parseInt(e.target.value) :
                         parseInt(e.target.value) % 100
 

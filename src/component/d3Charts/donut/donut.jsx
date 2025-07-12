@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import * as d3 from 'd3'
 import ResponsiveWrapper from '../responsive/response.js'
 const TAU = 2* Math.PI

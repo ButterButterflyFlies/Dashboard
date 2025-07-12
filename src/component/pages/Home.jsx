@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 // import Donut from '../d3Charts/donut/donut.js'
 // import Chart from '../d3Charts/chart/Chart.js'
 
@@ -10,14 +10,13 @@ const Title = (props) => (
         <div className="page">
             <div className="head">
                 <h1>{props.title}</h1>
-            </div>          
+            </div>
         </div>
     </div>
 )
 
 class Home extends Component {
   render() {
-    
     return (
         <div className="main-content">
             <Title title = {'Overview'}/>
