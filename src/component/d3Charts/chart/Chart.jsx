@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { scaleBand, scaleLinear } from 'd3-scale'
 
 import data from '../data.js'
-import Axes from './components/Axe.js'
-import Bars from './components/Bars.js'
+// import Axes from './components/Axe.js'
+// import Bars from './components/Bars.js'
 import ResponsiveWrapper from '../responsive/response.js'
 
 class Chart extends Component {
@@ -33,18 +33,18 @@ class Chart extends Component {
 
     return (
       <svg width={svgDimensions.width} height={svgDimensions.height}>
-        <Axes
+        {/* <Axes
           scales={{ xScale, yScale }}
           margins={margins}
           svgDimensions={svgDimensions}
-        />
-        <Bars
+        /> */}
+        {/* <Bars
           scales={{ xScale, yScale }}
           margins={margins}
           data={data}
           maxValue={maxValue}
           svgDimensions={svgDimensions}
-        />
+        /> */}
       </svg>
     )
   }

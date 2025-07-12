@@ -14,7 +14,6 @@ import '@Style/themes/index.css'
 
 const App = () => {
   const theme = useSelector(state => state.themeColorReducer.theme)
-  
   useEffect(()=> {
     document.documentElement.setAttribute('data-theme', theme)
   })

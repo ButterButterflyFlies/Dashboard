@@ -18,7 +18,6 @@ function Routes ({location})  {
                         <Route path='/home' component={Home} />
                         <Route path='/map' component={Map} />
                     </Switch>
-                    
                 </section>
             </CSSTransition>
         </TransitionGroup>

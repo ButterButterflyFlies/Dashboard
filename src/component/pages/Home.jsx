@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Donut from '../d3Charts/donut/donut.js'
-import Chart from '../d3Charts/chart/Chart.js'
+// import Donut from '../d3Charts/donut/donut.js'
+// import Chart from '../d3Charts/chart/Chart.js'
 
 
 import { connect } from "react-redux"
@@ -28,10 +28,10 @@ class Home extends Component {
                     </div>
                     <div className="charts">
                         <div className='arc-chart' color="FFFD87">
-                            <Donut number={this.props.val1}/>
+                            {/* <Donut number={this.props.val1}/> */}
                         </div>
                         <div className='arc-chart' color="#AA525A" >
-                            <Donut number={this.props.val2}/>
+                            {/* <Donut number={this.props.val2}/> */}
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ class Home extends Component {
                     </div>
                     <div className="charts">
                         <div className="block">
-                            <Chart/>
+                            {/* <Chart/> */}
                         </div>
                     </div>
                 </div>
